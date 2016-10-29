@@ -8,6 +8,21 @@ var esDomain = {
   region: 'us-west-2',
   endpoint: 'search-wackshaftchester-i7avkivh4zlasjvlgdzatttxxi.us-west-2.es.amazonaws.com'
 };
+var awsRequst = require('./aws_request.js');
+
+function getDirtyWordIndexes(userId) {
+  var url = path.join('/', 'text_input', userId, '_search');
+  var req = awsRequst.get(url, {
+    "query": {
+        "constant_score" : {
+          "filter" : {
+              "terms" : { "text" : ["test"]}
+             }
+         }
+    }
+  });
+  return req;
+}
 
 module.exports = {
   save: function(event, context) {
@@ -22,24 +37,10 @@ module.exports = {
     elastic.post(indexName, userId, data, context);
   },
 
-  getSwearWordCount: function(userId, context){
-    var endpoint = new AWS.Endpoint(esDomain.endpoint);
-    var req = new AWS.HttpRequest(endpoint);
+  getDirtyWordIds: function(userId, callback){
+    var idsWithSwearWords = ['sdf'];
 
-    req.method = 'GET';
-    req.path = path.join('/', 'text_input', userId, '_search');
-    req.region = esDomain.region;
-    req.headers['presigned-expires'] = false;
-    req.headers['Host'] = endpoint.host;
-    req.body = JSON.stringify({
-      "query": {
-		      "constant_score" : {
-  	        "filter" : {
-  	            "terms" : { "text" : ["test"]}
-  	           }
-      	   }
-      }
-    });
+    var req = getDirtyWordIndexes(userId);
 
     var send = new AWS.NodeHttpClient();
     send.handleRequest(req, null, function (httpResp) {
@@ -54,53 +55,13 @@ module.exports = {
         var response = JSON.parse(respBody);
         var hits = response.hits;
         var hitsArray = hits.hits;
-        var idsWithSwearWords = hitsArray.map(function(x){
+        idsWithSwearWords = hitsArray.map(function(x){
+          console.log('123123' + x._id);
+
           return x._id;
         });
-        var url = path.join('/', 'text_input', userId, '_mtermvectors');
-        var elastic_body = {
-        	"ids" : idsWithSwearWords,
-        	"parameters": {
-                "fields": [
-                        "text"
-                ],
-                "term_statistics": true
-            }
-        };
 
-        console.log('Ids: ' + idsWithSwearWords);
-        console.log('Path: ' + url);
-        console.log('Body: ' + JSON.stringify(elastic_body));
-
-        var nextReq = new AWS.HttpRequest(endpoint);
-
-        nextReq.method = 'POST';
-        nextReq.path = url;
-        nextReq.region = esDomain.region;
-        nextReq.headers['presigned-expires'] = false;
-        nextReq.headers['Host'] = endpoint.host;
-        nextReq.body = JSON.stringify(elastic_body);
-
-        var nextSend = new AWS.NodeHttpClient();
-        nextSend.handleRequest(nextReq, null, function (httpResp) {
-          var respBody = '';
-          httpResp.on('data', function (chunk) {
-            respBody += chunk;
-          });
-
-          httpResp.on('end', function (chunk) {
-            console.log('Response: ' + respBody);
-            context.succeed('Lambda added document1 ' + respBody);
-          });
-        },
-
-        function (err) {
-          console.log('Error: ' + err);
-          context.fail('Lambda failed with error ' + err);
-        });
-        //
-        // console.log('Response: ' + respBody);
-        // context.succeed('Lambda added document1 ' + data);
+        callback(idsWithSwearWords);
       });
     },
 
@@ -109,5 +70,7 @@ module.exports = {
       context.fail('Lambda failed with error ' + err);
     }
   );
+
+  return idsWithSwearWords;
   }
-}
+};
