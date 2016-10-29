@@ -1,9 +1,10 @@
+
+//Hack central
 var swear_words = require('./swear_words.js');
 
 module.exports = function(responseBody){
   var body = JSON.parse(responseBody);
   var results = {};
-  console.log('term_vector_parser' + responseBody);
 
   body.docs.forEach(function(doc) {
     var terms = doc.term_vectors.text.terms;
@@ -20,13 +21,9 @@ module.exports = function(responseBody){
     });
   });
 
-  console.log('results ' + JSON.stringify(results));
-
-  var foundWords = Object.keys(results).filter(function(key) {
-    return swear_words.includes(key);
+  var foundWords = Object.keys(results).filter(function(key){
+    return swear_words.indexOf(key) >= 0;
   });
-
-  console.log('foundWords ' + foundWords);
 
   return foundWords.map(function(key) {
     return {

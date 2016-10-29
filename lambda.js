@@ -1,12 +1,5 @@
-var lambda = require('./SearchTextFunction.js');
-// var lambda = require('./MyFunction.js');
-// var context = require('./context.js');
-// var event = require('./event.js');
-
-var thisEvent = {
-
-};
-// var thisContext = new context();
+var lambda = require('./MyFunction.js');
+// var lambda = require('./SearchTextFunction.js');
 
 lambda.handler({
         headers: {

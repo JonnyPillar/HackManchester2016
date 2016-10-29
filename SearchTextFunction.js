@@ -7,9 +7,7 @@ var textInput = require('./text_input.js');
 var termVectorParser = require('./term_vector_parser.js');
 
 function getTermVertors(userId, idsWithSwearWords) {
-  console.log('hehehehehe' + idsWithSwearWords);
-  var url = path.join('/', 'text_input', "6a721968-7273-4629-be0e-be2bbca5bc38", '_mtermvectors');
-  // var url = path.join('/', 'text_input', userId, '_mtermvectors');
+  var url = path.join('/', 'text_input', userId, '_mtermvectors');
   var req = awsRequst.post(url, JSON.stringify({
     "ids" : idsWithSwearWords,
     "parameters": {
@@ -25,7 +23,6 @@ function getTermVertors(userId, idsWithSwearWords) {
 exports.handler = function(event, context) {
   var userId = event.headers.Authorization;
   function getVectors(ids){
-    console.log('getVectors ' + ids);
     var vectorReq = getTermVertors(userId, ids);
 
     var nextSend = new AWS.NodeHttpClient();
@@ -36,11 +33,11 @@ exports.handler = function(event, context) {
       });
 
       httpResp.on('end', function (chunk) {
-
         var results = termVectorParser(respBody);
 
-        console.log('Response: ' + results);
-        context.succeed(results);
+        context.succeed({
+          stats: results
+        });
       });
     },
 
@@ -50,6 +47,5 @@ exports.handler = function(event, context) {
     });
   }
 
-  textInput.getDirtyWordIds("6a721968-7273-4629-be0e-be2bbca5bc38", getVectors);
-  // var idsWithSwearWords = textInput.getDirtyWordIds(userId, context);
+  var idsWithSwearWords = textInput.getDirtyWordIds(userId, getVectors);
 };

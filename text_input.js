@@ -32,7 +32,6 @@ module.exports = {
     var data = JSON.stringify({
       text: text
     });
-    console.log('Data: ' + data + ' ID: ' + userId);
 
     elastic.post(indexName, userId, data, context);
   },
@@ -56,8 +55,6 @@ module.exports = {
         var hits = response.hits;
         var hitsArray = hits.hits;
         idsWithSwearWords = hitsArray.map(function(x){
-          console.log('123123' + x._id);
-
           return x._id;
         });
 
