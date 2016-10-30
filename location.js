@@ -6,17 +6,19 @@ var AWS = require('aws-sdk');
 var path = require('path');
 var awsRequst = require('./aws_request.js');
 
-function getReq(userId, challengeId) {
+function getReq(userId, fromDate, toDate) {
   var url = path.join('/', indexName, userId, '_search', '?size=1000');
   var req = awsRequst.post(url, JSON.stringify({
     "query": {
       "bool": {
         "must": {
-          "terms": {
-            "challengeId": [challengeId]
+          "range" : {
+              "timestamp" : {
+                "gte" : fromDate,
+                "lte" : toDate
+              }
           }
         }
-
       }
     }
   }));
@@ -30,8 +32,8 @@ module.exports = {
     elastic.post(indexName, userId, postBody, context);
   },
 
-  get: function(userId, challengeId, context){
-    var req = getReq(userId, challengeId);
+  get: function(userId, fromDate, toDate, context){
+    var req = getReq(userId, fromDate, toDate);
 
     var send = new AWS.NodeHttpClient();
     send.handleRequest(req, null, function (httpResp) {
@@ -40,7 +42,6 @@ module.exports = {
       httpResp.on('data', function (chunk) {
         respBody += chunk;
       });
-
 
       httpResp.on('end', function (chunk) {
         var body = JSON.parse(respBody);
