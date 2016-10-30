@@ -23,7 +23,7 @@ module.exports = {
 
       httpResp.on('end', function (chunk) {
         console.log('Response: ' + respBody);
-        context.succeed(data);
+        context.succeed(JSON.parse(data));
       });
     },
 

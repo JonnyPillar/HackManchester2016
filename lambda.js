@@ -10,6 +10,9 @@ lambda.handler({
     },
     body: {
       "challengeId": "123",
+    	"name": "The pub",
+    	"locationType": "foo",
+    	"timestamp": "2014-04-23T18:25:43.511Z"
     }
     // body: {
     //   recipientId: '2bf4b429-689f-4c24-ab6e-ccd638b4a6dc',
