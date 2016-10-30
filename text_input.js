@@ -12,21 +12,30 @@ var esDomain = {
 };
 var awsRequst = require('./aws_request.js');
 
-function getDirtyWordIndexes(userId) {
+function getDirtyWordIndexes(userId, challengeId) {
   var url = path.join('/', 'text_input', userId, '_search', '?size=1000');
   var data = {
     "query": {
-        "bool" : {
-          "must" : {
-              "terms" : { "text" : swear_words}
-             }
+        "bool": {
+            "must": [
+                {
+                    "terms": {
+                        "challengeId": [
+                            challengeId
+                        ]
+                    }
+                },
+                {
+                    "terms": {
+                        "text": swear_words}}
+            ]
          }
     }
-  }
+  };
   console.log('HGSDJHFGSJDFGSaasdasdasd' + url);
   console.log('HGSDJHFGSJDFGSD' + JSON.stringify(data));
 
-  var req = awsRequst.get(url, data);
+  var req = awsRequst.post(url, JSON.stringify(data));
   return req;
 }
 
@@ -34,18 +43,20 @@ module.exports = {
   save: function(event, context) {
     var userId = event.headers.Authorization;
     var body = event.body;
+    var challengeId = body.challengeId;
     var text = body.text;
     var data = JSON.stringify({
+      challengeId: challengeId,
       text: text
     });
 
     elastic.post(indexName, userId, data, context);
   },
 
-  getDirtyWordIds: function(userId, callback){
+  getDirtyWordIds: function(userId, challengeId, callback){
     var idsWithSwearWords = ['sdf'];
 
-    var req = getDirtyWordIndexes(userId);
+    var req = getDirtyWordIndexes(userId, challengeId);
 
     var send = new AWS.NodeHttpClient();
     send.handleRequest(req, null, function (httpResp) {
@@ -57,6 +68,7 @@ module.exports = {
 
 
       httpResp.on('end', function (chunk) {
+        console.log('REsponseeeseseses ' + respBody);
         var response = JSON.parse(respBody);
         var hits = response.hits;
         var hitsArray = hits.hits;
@@ -64,7 +76,7 @@ module.exports = {
           return x._id;
         });
 
-        console.log('NUMBER OF INDEXES' + idsWithSwearWords.count);
+        console.log('NUMBER OF INDEXES' + idsWithSwearWords.length);
         console.log('INDEXES' + idsWithSwearWords);
 
         callback(idsWithSwearWords);

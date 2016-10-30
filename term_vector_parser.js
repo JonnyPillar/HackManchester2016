@@ -7,6 +7,10 @@ module.exports = function(responseBody){
   var results = {};
   console.log('RESPONSE BODY ' + responseBody);
 
+  if(!body.docs) {
+    return [];
+  }
+
   body.docs.forEach(function(doc) {
     if(doc.term_vectors.text){
       var terms = doc.term_vectors.text.terms;

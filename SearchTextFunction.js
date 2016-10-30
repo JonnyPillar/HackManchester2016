@@ -21,8 +21,9 @@ function getTermVertors(userId, idsWithSwearWords) {
 }
 
 exports.handler = function(event, context) {
-  console.log('herjhdfjkgdf');
   var userId = event.headers.Authorization;
+  var challengeId = event.queryParams.challengeId;
+  console.log('challengeIdchallengeIdchallengeIdchallengeId ' + challengeId)
   function getVectors(ids){
     var vectorReq = getTermVertors(userId, ids);
 
@@ -48,5 +49,5 @@ exports.handler = function(event, context) {
     });
   }
 
-  var idsWithSwearWords = textInput.getDirtyWordIds(userId, getVectors);
+  var idsWithSwearWords = textInput.getDirtyWordIds(userId, challengeId, getVectors);
 };
