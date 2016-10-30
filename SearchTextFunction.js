@@ -22,9 +22,17 @@ function getTermVertors(userId, idsWithSwearWords) {
 
 exports.handler = function(event, context) {
   var userId = event.headers.Authorization;
-  var challengeId = event.queryParams.challengeId;
-  console.log('challengeIdchallengeIdchallengeIdchallengeId ' + challengeId)
+  var fromDate = event.queryParams.fromDate;
+  var toDate = event.queryParams.toDate;
+
+  console.log('challengeIdchallengeIdchallengeIdchallengeId ' + fromDate + " " + toDate)
+
   function getVectors(ids){
+    if(!ids){
+      context.succeed({
+        stats: []
+      });
+    }
     var vectorReq = getTermVertors(userId, ids);
 
     var nextSend = new AWS.NodeHttpClient();
@@ -49,5 +57,5 @@ exports.handler = function(event, context) {
     });
   }
 
-  var idsWithSwearWords = textInput.getDirtyWordIds(userId, challengeId, getVectors);
+  var idsWithSwearWords = textInput.getDirtyWordIds(userId, fromDate, toDate, getVectors);
 };

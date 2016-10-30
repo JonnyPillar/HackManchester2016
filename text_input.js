@@ -12,22 +12,25 @@ var esDomain = {
 };
 var awsRequst = require('./aws_request.js');
 
-function getDirtyWordIndexes(userId, challengeId) {
+function getDirtyWordIndexes(userId, fromDate, toDate) {
   var url = path.join('/', 'text_input', userId, '_search', '?size=1000');
   var data = {
     "query": {
         "bool": {
             "must": [
                 {
-                    "terms": {
-                        "challengeId": [
-                            challengeId
-                        ]
-                    }
+                		"range" : {
+  				              "createdDate" : {
+      				            "gte" : fromDate,
+      				            "lte" : toDate
+        				        }
+        				    }
                 },
                 {
                     "terms": {
-                        "text": swear_words}}
+                        "text": swear_words
+                      }
+                }
             ]
          }
     }
@@ -47,16 +50,19 @@ module.exports = {
     var text = body.text;
     var data = JSON.stringify({
       challengeId: challengeId,
-      text: text
+      text: text,
+      createdDate: new Date()
     });
+
+    console.log('JSHDFJKHSDKF ' + JSON.stringify(data));
 
     elastic.post(indexName, userId, data, context);
   },
 
-  getDirtyWordIds: function(userId, challengeId, callback){
+  getDirtyWordIds: function(userId, fromDate, toDate, callback){
     var idsWithSwearWords = ['sdf'];
 
-    var req = getDirtyWordIndexes(userId, challengeId);
+    var req = getDirtyWordIndexes(userId, fromDate, toDate);
 
     var send = new AWS.NodeHttpClient();
     send.handleRequest(req, null, function (httpResp) {
