@@ -24,6 +24,7 @@ exports.handler = function(event, context) {
   var userId = event.headers.Authorization;
   var fromDate = event.queryParams.fromDate;
   var toDate = event.queryParams.toDate;
+  var customizer = event.queryParams.customizer;
 
   console.log('challengeIdchallengeIdchallengeIdchallengeId ' + fromDate + " " + toDate)
 
@@ -43,7 +44,7 @@ exports.handler = function(event, context) {
       });
 
       httpResp.on('end', function (chunk) {
-        var results = termVectorParser(respBody);
+        var results = termVectorParser(respBody, customizer);
 
 
         var finalResult = {
@@ -61,5 +62,5 @@ exports.handler = function(event, context) {
     });
   }
 
-  var idsWithSwearWords = textInput.getDirtyWordIds(userId, fromDate, toDate, getVectors);
+  var idsWithSwearWords = textInput.getDirtyWordIds(userId, fromDate, toDate, customizer, getVectors);
 };

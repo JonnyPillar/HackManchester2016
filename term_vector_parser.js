@@ -2,7 +2,7 @@
 //Hack central
 var swear_words = require('./swear_words.js');
 
-module.exports = function(responseBody){
+module.exports = function(responseBody, customizer){
   var body = JSON.parse(responseBody);
   var results = {};
   console.log('RESPONSE BODY ' + responseBody);
@@ -30,8 +30,10 @@ module.exports = function(responseBody){
     }
   });
 
+  var wordsToSearch = customizer ? [customizer] : swear_words;
+
   var foundWords = Object.keys(results).filter(function(key){
-    return swear_words.indexOf(key) >= 0;
+    return wordsToSearch.indexOf(key) >= 0;
   });
 
   return foundWords.map(function(key) {
