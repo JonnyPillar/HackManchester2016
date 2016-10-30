@@ -25,13 +25,10 @@ function getReq(userId) {
 }
 
 module.exports = {
-  add: function(challengerId, recipientId, context){
-    var body = JSON.stringify({
-      challengerId: challengerId,
-      recipientId: recipientId
-    });
+  add: function(body, context){
+    var postBody = JSON.stringify(body);
 
-    elastic.post(indexName, 'active', body, context);
+    elastic.post(indexName, 'active', postBody, context);
   },
 
   get: function(userId, context){

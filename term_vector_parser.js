@@ -24,7 +24,6 @@ module.exports = function(responseBody){
     } else {
       console.log('ERROR ' + JSON.stringify(doc));
     }
-
   });
 
   var foundWords = Object.keys(results).filter(function(key){

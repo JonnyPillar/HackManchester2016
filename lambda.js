@@ -1,13 +1,15 @@
-// var lambda = require('./ChallengerGetFunction.js');
-var lambda = require('./SearchTextFunction.js');
+var lambda = require('./ChallengerAddFunction.js');
+// var lambda = require('./SearchTextFunction.js');
 
 lambda.handler({
     headers: {
       Authorization: "34b763d8-3f89-44de-9d65-e4ef80fcf179"
     },
     body: {
-      recipientId: '34b763d8-3f89-44de-9d65-e4ef80fcf179',
-      type: 'Swear'
+      recipientId: '2bf4b429-689f-4c24-ab6e-ccd638b4a6dc',
+      type: 'swear',
+      fromDate: "2012-04-23T18:25:43.511Z",
+      toDate: "2014-04-23T18:25:43.511Z"
     }
   }, {
     succeed: function(result) {
