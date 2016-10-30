@@ -1,0 +1,649 @@
+{
+    "docs": [
+        {
+            "_index": "text_input",
+            "_type": "XsfjXnAbjZYvccMUszObjQCC7ip1",
+            "_id": "AVgSWxumNUacUf1LDird",
+            "_version": 1,
+            "found": true,
+            "took": 1,
+            "term_vectors": {
+                "text": {
+                    "field_statistics": {
+                        "sum_doc_freq": 177,
+                        "doc_count": 64,
+                        "sum_ttf": 187
+                    },
+                    "terms": {
+                        "beeping": {
+                            "doc_freq": 1,
+                            "ttf": 1,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 5,
+                                    "start_offset": 24,
+                                    "end_offset": 31,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        },
+                        "it's": {
+                            "doc_freq": 1,
+                            "ttf": 1,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 3,
+                                    "start_offset": 13,
+                                    "end_offset": 17,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        },
+                        "no": {
+                            "doc_freq": 1,
+                            "ttf": 1,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 2,
+                                    "start_offset": 10,
+                                    "end_offset": 12,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        },
+                        "oh": {
+                            "doc_freq": 1,
+                            "ttf": 1,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 1,
+                                    "start_offset": 7,
+                                    "end_offset": 9,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        },
+                        "oyster": {
+                            "doc_freq": 1,
+                            "ttf": 1,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 0,
+                                    "start_offset": 0,
+                                    "end_offset": 6,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        },
+                        "still": {
+                            "doc_freq": 1,
+                            "ttf": 1,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 4,
+                                    "start_offset": 18,
+                                    "end_offset": 23,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "_index": "text_input",
+            "_type": "XsfjXnAbjZYvccMUszObjQCC7ip1",
+            "_id": "AVgSWmm_NUacUf1LDirY",
+            "_version": 1,
+            "found": true,
+            "took": 1,
+            "term_vectors": {
+                "text": {
+                    "field_statistics": {
+                        "sum_doc_freq": 177,
+                        "doc_count": 64,
+                        "sum_ttf": 187
+                    },
+                    "terms": {
+                        "fucking": {
+                            "doc_freq": 4,
+                            "ttf": 4,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 1,
+                                    "start_offset": 8,
+                                    "end_offset": 15,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        },
+                        "monster": {
+                            "doc_freq": 3,
+                            "ttf": 3,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 0,
+                                    "start_offset": 0,
+                                    "end_offset": 7,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        },
+                        "shit": {
+                            "doc_freq": 11,
+                            "ttf": 11,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 2,
+                                    "start_offset": 16,
+                                    "end_offset": 20,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "_index": "text_input",
+            "_type": "XsfjXnAbjZYvccMUszObjQCC7ip1",
+            "_id": "AVgSWpogNUacUf1LDira",
+            "_version": 1,
+            "found": true,
+            "took": 1,
+            "term_vectors": {
+                "text": {
+                    "field_statistics": {
+                        "sum_doc_freq": 177,
+                        "doc_count": 64,
+                        "sum_ttf": 187
+                    },
+                    "terms": {
+                        "fucking": {
+                            "doc_freq": 4,
+                            "ttf": 4,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 1,
+                                    "start_offset": 8,
+                                    "end_offset": 15,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        },
+                        "monster": {
+                            "doc_freq": 3,
+                            "ttf": 3,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 0,
+                                    "start_offset": 0,
+                                    "end_offset": 7,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        },
+                        "shit": {
+                            "doc_freq": 11,
+                            "ttf": 11,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 2,
+                                    "start_offset": 16,
+                                    "end_offset": 20,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "_index": "text_input",
+            "_type": "XsfjXnAbjZYvccMUszObjQCC7ip1",
+            "_id": "AVgSWduUNUacUf1LDirX",
+            "_version": 1,
+            "found": true,
+            "took": 1,
+            "term_vectors": {
+                "text": {
+                    "field_statistics": {
+                        "sum_doc_freq": 177,
+                        "doc_count": 64,
+                        "sum_ttf": 187
+                    },
+                    "terms": {
+                        "vanilla": {
+                            "doc_freq": 1,
+                            "ttf": 1,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 0,
+                                    "start_offset": 0,
+                                    "end_offset": 7,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "_index": "text_input",
+            "_type": "XsfjXnAbjZYvccMUszObjQCC7ip1",
+            "_id": "AVgSWsQONUacUf1LDirb",
+            "_version": 1,
+            "found": true,
+            "took": 1,
+            "term_vectors": {
+                "text": {
+                    "field_statistics": {
+                        "sum_doc_freq": 177,
+                        "doc_count": 64,
+                        "sum_ttf": 187
+                    },
+                    "terms": {
+                        "a": {
+                            "doc_freq": 3,
+                            "ttf": 3,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 1,
+                                    "start_offset": 5,
+                                    "end_offset": 6,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        },
+                        "dick": {
+                            "doc_freq": 9,
+                            "ttf": 9,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 2,
+                                    "start_offset": 7,
+                                    "end_offset": 11,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        },
+                        "suck": {
+                            "doc_freq": 2,
+                            "ttf": 2,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 0,
+                                    "start_offset": 0,
+                                    "end_offset": 4,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "_index": "text_input",
+            "_type": "XsfjXnAbjZYvccMUszObjQCC7ip1",
+            "_id": "AVgSWRVhNUacUf1LDirV",
+            "_version": 1,
+            "found": true,
+            "took": 1,
+            "term_vectors": {
+                "text": {
+                    "field_statistics": {
+                        "sum_doc_freq": 177,
+                        "doc_count": 64,
+                        "sum_ttf": 187
+                    },
+                    "terms": {
+                        "cock": {
+                            "doc_freq": 1,
+                            "ttf": 1,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 0,
+                                    "start_offset": 0,
+                                    "end_offset": 4,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "_index": "text_input",
+            "_type": "XsfjXnAbjZYvccMUszObjQCC7ip1",
+            "_id": "AVgSVbVnNUacUf1LDirS",
+            "_version": 1,
+            "found": true,
+            "took": 1,
+            "term_vectors": {
+                "text": {
+                    "field_statistics": {
+                        "sum_doc_freq": 177,
+                        "doc_count": 64,
+                        "sum_ttf": 187
+                    },
+                    "terms": {
+                        "big": {
+                            "doc_freq": 2,
+                            "ttf": 2,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 4,
+                                    "start_offset": 22,
+                                    "end_offset": 25,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        },
+                        "dick": {
+                            "doc_freq": 9,
+                            "ttf": 9,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 6,
+                                    "start_offset": 34,
+                                    "end_offset": 38,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        },
+                        "fucking": {
+                            "doc_freq": 4,
+                            "ttf": 4,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 3,
+                                    "start_offset": 14,
+                                    "end_offset": 21,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        },
+                        "jonny": {
+                            "doc_freq": 1,
+                            "ttf": 1,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 1,
+                                    "start_offset": 4,
+                                    "end_offset": 9,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        },
+                        "monster": {
+                            "doc_freq": 3,
+                            "ttf": 3,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 5,
+                                    "start_offset": 26,
+                                    "end_offset": 33,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        },
+                        "the": {
+                            "doc_freq": 3,
+                            "ttf": 3,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 0,
+                                    "start_offset": 0,
+                                    "end_offset": 3,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        },
+                        "you": {
+                            "doc_freq": 4,
+                            "ttf": 5,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 2,
+                                    "start_offset": 10,
+                                    "end_offset": 13,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "_index": "text_input",
+            "_type": "XsfjXnAbjZYvccMUszObjQCC7ip1",
+            "_id": "AVgSV7AbNUacUf1LDirU",
+            "_version": 1,
+            "found": true,
+            "took": 1,
+            "term_vectors": {
+                "text": {
+                    "field_statistics": {
+                        "sum_doc_freq": 177,
+                        "doc_count": 64,
+                        "sum_ttf": 187
+                    },
+                    "terms": {
+                        "big": {
+                            "doc_freq": 2,
+                            "ttf": 2,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 3,
+                                    "start_offset": 13,
+                                    "end_offset": 16,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        },
+                        "janet": {
+                            "doc_freq": 1,
+                            "ttf": 1,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 1,
+                                    "start_offset": 3,
+                                    "end_offset": 8,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        },
+                        "knobs": {
+                            "doc_freq": 1,
+                            "ttf": 1,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 4,
+                                    "start_offset": 17,
+                                    "end_offset": 22,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        },
+                        "rq": {
+                            "doc_freq": 1,
+                            "ttf": 1,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 0,
+                                    "start_offset": 0,
+                                    "end_offset": 2,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        },
+                        "you": {
+                            "doc_freq": 4,
+                            "ttf": 5,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 2,
+                                    "start_offset": 9,
+                                    "end_offset": 12,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "_index": "text_input",
+            "_type": "XsfjXnAbjZYvccMUszObjQCC7ip1",
+            "_id": "AVgSWwbKNUacUf1LDirc",
+            "_version": 1,
+            "found": true,
+            "took": 1,
+            "term_vectors": {
+                "text": {
+                    "field_statistics": {
+                        "sum_doc_freq": 177,
+                        "doc_count": 64,
+                        "sum_ttf": 187
+                    },
+                    "terms": {
+                        "bellend": {
+                            "doc_freq": 3,
+                            "ttf": 3,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 0,
+                                    "start_offset": 0,
+                                    "end_offset": 7,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "_index": "text_input",
+            "_type": "XsfjXnAbjZYvccMUszObjQCC7ip1",
+            "_id": "AVgSV52iNUacUf1LDirT",
+            "_version": 1,
+            "found": true,
+            "took": 1,
+            "term_vectors": {
+                "text": {
+                    "field_statistics": {
+                        "sum_doc_freq": 177,
+                        "doc_count": 64,
+                        "sum_ttf": 187
+                    },
+                    "terms": {
+                        "if": {
+                            "doc_freq": 1,
+                            "ttf": 1,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 1,
+                                    "start_offset": 8,
+                                    "end_offset": 10,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        },
+                        "is": {
+                            "doc_freq": 3,
+                            "ttf": 3,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 3,
+                                    "start_offset": 16,
+                                    "end_offset": 18,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        },
+                        "testing": {
+                            "doc_freq": 1,
+                            "ttf": 1,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 0,
+                                    "start_offset": 0,
+                                    "end_offset": 7,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        },
+                        "this": {
+                            "doc_freq": 1,
+                            "ttf": 1,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 2,
+                                    "start_offset": 11,
+                                    "end_offset": 15,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        },
+                        "working": {
+                            "doc_freq": 1,
+                            "ttf": 1,
+                            "term_freq": 1,
+                            "tokens": [
+                                {
+                                    "position": 4,
+                                    "start_offset": 19,
+                                    "end_offset": 26,
+                                    "payload": "d29yZA=="
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

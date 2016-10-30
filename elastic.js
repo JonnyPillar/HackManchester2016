@@ -23,13 +23,13 @@ module.exports = {
 
       httpResp.on('end', function (chunk) {
         console.log('Response: ' + respBody);
-        context.succeed('Lambda added document1 ' + data);
+        context.succeed(data);
       });
     },
 
     function (err) {
       console.log('Error: ' + err);
-      context.fail('Lambda failed with error ' + err);
+      context.fail(err);
     });
   },
 

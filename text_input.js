@@ -4,6 +4,8 @@ var https = require('https');
 var async = require('async');
 var AWS = require('aws-sdk');
 var path = require('path');
+var swear_words = require('./swear_words.js');
+
 var esDomain = {
   region: 'us-west-2',
   endpoint: 'search-wackshaftchester-i7avkivh4zlasjvlgdzatttxxi.us-west-2.es.amazonaws.com'
@@ -11,16 +13,20 @@ var esDomain = {
 var awsRequst = require('./aws_request.js');
 
 function getDirtyWordIndexes(userId) {
-  var url = path.join('/', 'text_input', userId, '_search');
-  var req = awsRequst.get(url, {
+  var url = path.join('/', 'text_input', userId, '_search', '?size=1000');
+  var data = {
     "query": {
-        "constant_score" : {
-          "filter" : {
-              "terms" : { "text" : ["test"]}
+        "bool" : {
+          "must" : {
+              "terms" : { "text" : swear_words}
              }
          }
     }
-  });
+  }
+  console.log('HGSDJHFGSJDFGSaasdasdasd' + url);
+  console.log('HGSDJHFGSJDFGSD' + JSON.stringify(data));
+
+  var req = awsRequst.get(url, data);
   return req;
 }
 
@@ -57,6 +63,9 @@ module.exports = {
         idsWithSwearWords = hitsArray.map(function(x){
           return x._id;
         });
+
+        console.log('NUMBER OF INDEXES' + idsWithSwearWords.count);
+        console.log('INDEXES' + idsWithSwearWords);
 
         callback(idsWithSwearWords);
       });

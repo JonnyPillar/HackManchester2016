@@ -21,6 +21,7 @@ function getTermVertors(userId, idsWithSwearWords) {
 }
 
 exports.handler = function(event, context) {
+  console.log('herjhdfjkgdf');
   var userId = event.headers.Authorization;
   function getVectors(ids){
     var vectorReq = getTermVertors(userId, ids);
