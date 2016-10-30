@@ -17,6 +17,7 @@ exports.handler = function(event, context) {
   var fromDate = event.body.fromDate;
   var toDate = event.body.toDate;
   var forfeit = event.body.forfeit;
+  var customizer = event.body.customizer;
 
   var data = {
     id: generateUUID(),
@@ -25,7 +26,8 @@ exports.handler = function(event, context) {
     type: type,
     fromDate: fromDate,
     toDate: toDate,
-    forfeit: forfeit
+    forfeit: forfeit,
+    customizer: customizer
   };
 
   challengers.add(data, context);

@@ -7,7 +7,7 @@ var path = require('path');
 var awsRequst = require('./aws_request.js');
 
 function getReq(userId, fromDate, toDate) {
-  var url = path.join('/', indexName, userId, '_search', '?size=1000');
+  var url = path.join('/', indexName, userId, '_search', '?size=10000');
   var req = awsRequst.post(url, JSON.stringify({
     "query": {
       "bool": {

@@ -45,9 +45,13 @@ exports.handler = function(event, context) {
       httpResp.on('end', function (chunk) {
         var results = termVectorParser(respBody);
 
-        context.succeed({
+
+        var finalResult = {
           stats: results
-        });
+        };
+
+        console.log('FINAL RESULTS ' + JSON.stringify(finalResult));
+        context.succeed(finalResult);
       });
     },
 

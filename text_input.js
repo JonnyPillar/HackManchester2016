@@ -13,7 +13,7 @@ var esDomain = {
 var awsRequst = require('./aws_request.js');
 
 function getDirtyWordIndexes(userId, fromDate, toDate) {
-  var url = path.join('/', 'text_input', userId, '_search', '?size=1000');
+  var url = path.join('/', 'text_input', userId, '_search', '?size=10000');
   var data = {
     "query": {
         "bool": {

@@ -8,7 +8,7 @@ var awsRequst = require('./aws_request.js');
 
 
 function getReq(userId) {
-  var url = path.join('/', indexName, 'active', '_search', '?size=1000');
+  var url = path.join('/', indexName, 'active', '_search', '?size=10000');
   var req = awsRequst.post(url, JSON.stringify({
     "query": {
       "bool": {
