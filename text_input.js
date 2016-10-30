@@ -74,7 +74,6 @@ module.exports = {
         respBody += chunk;
       });
 
-
       httpResp.on('end', function (chunk) {
         console.log('REsponseeeseseses ' + respBody);
         var response = JSON.parse(respBody);
