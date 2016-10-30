@@ -1,7 +1,8 @@
 // var lambda = require('./ChallengerAddFunction.js');
 // var lambda = require('./SearchTextFunction.js');
 // var lambda = require('./MyFunction.js');
-var lambda = require('./LocationAddFunction.js');
+// var lambda = require('./LocationAddFunction.js');
+var lambda = require('./LocationGetFunction.js');
 
 lambda.handler({
     headers: {
@@ -9,8 +10,6 @@ lambda.handler({
     },
     body: {
       "challengeId": "123",
-	"locationType": "Pub",
-	"timestamp": "2014-04-23T18:25:43.511Z"
     }
     // body: {
     //   recipientId: '2bf4b429-689f-4c24-ab6e-ccd638b4a6dc',
